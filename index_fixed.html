@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Billy's math-help and learning portal">
+  <meta name="author" content="Billy">
+  <title>Math Assistant - Billy!</title>
+
+  <!-- Keep these paths: the repository already stores these folders beside index.html. -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/freelancer.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet">
+  <style>
+    #selenite-portal .portal-panel { background: rgba(0,0,0,.12); border: 2px solid rgba(255,255,255,.35); border-radius: 8px; padding: 24px; }
+    #selenite-portal .portal-input { color: #2c3e50; max-width: 420px; margin: 0 auto 15px; }
+    #selenite-app { display: none; background: #2c3e50; border-radius: 8px; overflow: hidden; }
+    #selenite-frame { display: block; width: 100%; height: 75vh; min-height: 420px; border: 0; background: #111; }
+    .portal-toolbar { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; color: white; }
+    .portal-note { font-size: 13px; }
+    .portfolio-modal .modal-body img { max-height: 55vh; }
+  </style>
+</head>
+<body id="page-top" class="index">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#page-top">Billy</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden"><a href="#page-top"></a></li>
+          <li class="page-scroll"><a href="#portfolio">My Features!</a></li>
+          <li class="page-scroll"><a href="#about">About Billy</a></li>
+          <li class="page-scroll"><a href="#selenite-portal">Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container"><div class="row"><div class="col-lg-12">
+      <img class="img-responsive" src="img/profile.png" alt="Billy profile image">
+      <div class="intro-text">
+        <span class="name">Hey there! I am Billy!</span>
+        <hr class="star-light">
+        <span class="skills">I help children learn math without simply giving away the answers!<br> I also have plenty of math sheets!</span>
+      </div>
+    </div></div></div>
+  </header>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="row"><div class="col-lg-12 text-center"><h2>The Stuff I Do!</h2><hr class="star-primary"></div></div>
+      <div class="row">
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" aria-label="Open feature 1"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/cabin.png" class="img-responsive" alt="Feature 1"></a></div>
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" aria-label="Open feature 2"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/cake.png" class="img-responsive" alt="Feature 2"></a></div>
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" aria-label="Open feature 3"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/circus.png" class="img-responsive" alt="Feature 3"></a></div>
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal4" class="portfolio-link" data-toggle="modal" aria-label="Open feature 4"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/game.png" class="img-responsive" alt="Feature 4"></a></div>
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal5" class="portfolio-link" data-toggle="modal" aria-label="Open feature 5"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/safe.png" class="img-responsive" alt="Feature 5"></a></div>
+        <div class="col-sm-4 portfolio-item"><a href="#portfolioModal6" class="portfolio-link" data-toggle="modal" aria-label="Open feature 6"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/submarine.png" class="img-responsive" alt="Feature 6"></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="success" id="about">
+    <div class="container">
+      <div class="row"><div class="col-lg-12 text-center"><h2>About</h2><hr class="star-light"></div></div>
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-2"><p>I'd love to help you or your children learn. Explore the features above to get started.</p></div>
+        <div class="col-lg-4"><p>For questions, use the contact details supplied by the site owner.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="selenite-portal" class="success">
+    <div class="container">
+      <div class="row"><div class="col-lg-12 text-center"><h2>Selenite Portal</h2><hr class="star-light"><p>Enter your access code to open the portal.</p></div></div>
+      <div class="row"><div class="col-lg-8 col-lg-offset-2 text-center">
+        <div id="selenite-login" class="portal-panel">
+          <form id="selenite-login-form">
+            <label for="selenite-password">Access code</label>
+            <input id="selenite-password" type="password" class="form-control portal-input" placeholder="Enter password" autocomplete="current-password" required>
+            <button type="submit" class="btn btn-lg btn-outline"><i class="fa fa-unlock-alt"></i> Unlock Portal</button>
+            <p id="selenite-error" role="status" aria-live="polite" style="min-height:24px;margin:15px 0 0;color:#fff"></p>
+          </form>
+        </div>
+        <div id="selenite-app">
+          <div class="portal-toolbar"><strong><i class="fa fa-gamepad"></i> Selenite</strong><button id="selenite-lock" type="button" class="btn btn-default btn-sm"><i class="fa fa-lock"></i> Lock Portal</button></div>
+          <iframe id="selenite-frame" title="Selenite portal" allow="fullscreen; gamepad" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="portal-note" style="margin-top:14px">The portal is intended to open inside this page. If the site refuses to load in an embedded frame, use the open-site link below.</p>
+        <p><a href="https://selenite.cc/" target="_blank" rel="noopener noreferrer">Open Selenite in a new tab</a></p>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="text-center"><div class="footer-below"><div class="container"><div class="row"><div class="col-lg-12">Copyright &copy; Billy.co</div></div></div></div></footer>
+
+  <!-- All six portfolio tiles now have a matching modal target. -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Math Learning</h2><hr class="star-primary"><img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt=""><p>Explore learning activities designed to help students practise.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Practice Sheets</h2><hr class="star-primary"><img src="img/portfolio/cake.png" class="img-responsive img-centered" alt=""><p>Use practice sheets to build confidence with maths skills.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Math AI</h2><hr class="star-primary"><img src="img/portfolio/circus.png" class="img-responsive img-centered" alt=""><p>Get hints and guidance to help you learn the method, rather than just copying an answer.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Learning Games</h2><hr class="star-primary"><img src="img/portfolio/game.png" class="img-responsive img-centered" alt=""><p>Practise skills with activities and games.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Progress</h2><hr class="star-primary"><img src="img/portfolio/safe.png" class="img-responsive img-centered" alt=""><p>Keep practising and build your confidence one step at a time.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>More Resources</h2><hr class="star-primary"><img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt=""><p>Check back for more learning resources and activities.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+
+  <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md"><a class="btn btn-primary" href="#page-top" aria-label="Scroll to top"><i class="fa fa-chevron-up"></i></a></div>
+
+  <!-- Load dependencies in order: jQuery first, then Bootstrap, then the theme script. -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="js/freelancer.min.js"></script>
+  <script>
+    (function () {
+      // This is only a front-end gate, not secure authentication. Anyone can inspect the source.
+      // Change this demo value if you still want a simple visual gate.
+      var PORTAL_PASSWORD = "demo123";
+      var form = document.getElementById("selenite-login-form");
+      var passwordInput = document.getElementById("selenite-password");
+      var error = document.getElementById("selenite-error");
+      var login = document.getElementById("selenite-login");
+      var app = document.getElementById("selenite-app");
+      var frame = document.getElementById("selenite-frame");
+      var lock = document.getElementById("selenite-lock");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (passwordInput.value === PORTAL_PASSWORD) {
+          error.textContent = "";
+          login.style.display = "none";
+          app.style.display = "block";
+          if (!frame.getAttribute("src")) frame.setAttribute("src", "https://selenite.cc/");
+        } else {
+          error.textContent = "Incorrect password. Please try again.";
+          passwordInput.value = "";
+          passwordInput.focus();
+        }
+      });
+      lock.addEventListener("click", function () {
+        frame.removeAttribute("src");
+        app.style.display = "none";
+        login.style.display = "block";
+        passwordInput.value = "";
+        passwordInput.focus();
+      });
+    }());
+  </script>
+</body>
+</html>
