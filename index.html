@@ -138,18 +138,19 @@
       var frame = document.getElementById("selenite-frame");
       var lock = document.getElementById("selenite-lock");
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-      if (passwordInput.value === PORTAL_PASSWORD) {
-        error.textContent = "";
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-        window.location.href = "/Testing-again/menu/";
-  }  else {
-        error.textContent = "Incorrect password. Please try again.";
-        passwordInput.value = "";
-        passwordInput.focus();
+  if (passwordInput.value === PORTAL_PASSWORD) {
+    error.textContent = "";
+
+    window.top.location.href = "/Testing-again/Learn/";
+  } else {
+    error.textContent = "Incorrect password. Please try again.";
+    passwordInput.value = "";
+    passwordInput.focus();
   }
-      });
+});
       lock.addEventListener("click", function () {
         frame.removeAttribute("src");
         app.style.display = "none";
