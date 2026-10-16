@@ -140,16 +140,15 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        if (passwordInput.value === PORTAL_PASSWORD) {
-          error.textContent = "";
-          login.style.display = "none";
-          app.style.display = "block";
-          if (!frame.getAttribute("src")) frame.setAttribute("src", "menu/index.html");
-        } else {
-          error.textContent = "Incorrect password. Please try again.";
-          passwordInput.value = "";
-          passwordInput.focus();
-        }
+      if (passwordInput.value === PORTAL_PASSWORD) {
+        error.textContent = "";
+
+        window.location.href = "/Testing-again/menu/";
+  }  else {
+        error.textContent = "Incorrect password. Please try again.";
+        passwordInput.value = "";
+        passwordInput.focus();
+  }
       });
       lock.addEventListener("click", function () {
         frame.removeAttribute("src");
