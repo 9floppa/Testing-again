@@ -372,66 +372,49 @@
 
     </div>
 
-    <script>
-        // CHANGE THIS TO YOUR OWN ACCESS CODE
-        const ACCESS_CODE = "billy123";
 
-        const loginForm = document.getElementById("loginForm");
-        const codeInput = document.getElementById("codeInput");
-        const errorMessage = document.getElementById("errorMessage");
+  <script>
+      const ACCESS_CODE = "nolearn";
 
-        loginForm.addEventListener("submit", function(event) {
-            event.preventDefault();
+      const loginForm = document.getElementById("loginForm");
+      const codeInput = document.getElementById("codeInput");
+      const errorMessage = document.getElementById("errorMessage");
+      const loginScreen = document.getElementById("loginScreen");
+      const website = document.getElementById("website");
 
-            if (codeInput.value === ACCESS_CODE) {
-                document.getElementById("loginScreen").style.display = "none";
-                document.getElementById("website").style.display = "block";
+      website.style.display = "none";
 
-                showRandomText();
-            } else {
-                errorMessage.textContent = "Incorrect code. Try again.";
-                codeInput.value = "";
-                codeInput.focus();
-            }
-        });
+      loginForm.addEventListener("submit", function(event) {
+          event.preventDefault();
 
-        function showRandomText() {
-            const messages = [
-                "you like my games?",
-                "This took too long.",
-                "You want my games? You can have them! I left all the games I gathered together in one place! Now you just have to find it!",
-                "Why tf you looking at this?",
-                "GOON."
-            ];
+          if (codeInput.value === ACCESS_CODE) {
+              sessionStorage.setItem("billyAccessGranted", "yes");
 
-            const randomVar = Math.floor(Math.random() * messages.length);
+              loginScreen.style.display = "none";
+              website.style.display = "block";
 
-            document.getElementById("randomText").textContent =
-                messages[randomVar];
-        }
-    </script>
-    
-    <script>
-        const correctCode = "nolearn";
+              showRandomText();
+          } else {
+              errorMessage.textContent = "Incorrect code. Try again.";
+              codeInput.value = "";
+              codeInput.focus();
+          }
+      });
 
-        document.getElementById("unlockButton").addEventListener("click", function () {
-            const enteredCode = document.querySelector(".lock-input").value;
-            const errorMessage = document.getElementById("errorMessage");
-            const loginScreen = document.getElementById("loginScreen");
+      function showRandomText() {
+          const messages = [
+              "you like my games?",
+              "This took too long.",
+              "You want my games? You can have them! I left all the games I gathered together in one place! Now you just have to find it!",
+              "Why tf you looking at this?",
+              "GOON."
+          ];
 
-            if (enteredCode === correctCode) {
-                loginScreen.style.display = "none";
-            } else {
-                errorMessage.textContent = "Incorrect code! Try again.";
-            }
-        });
+          const randomVar = Math.floor(Math.random() * messages.length);
 
-        document.querySelector(".lock-input").addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                document.getElementById("unlockButton").click();
-            }
-        });
-    </script>
-
+          document.getElementById("randomText").textContent =
+              messages[randomVar];
+      }
+  </script>
 </body>
 </html>
