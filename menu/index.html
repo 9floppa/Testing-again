@@ -1,7 +1,315 @@
-<html>
-  <div style¨background color: blue;¨>
-   <a href="games/FNFHTML5-main/FNFHTML5-main/index.html">
-      oooooo game
-    </a>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #0b0b0f;
+            color: #f5f0e8;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 75px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #101014;
+            border-bottom: 1px solid #292025;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff303f;
+        }
+
+        .nav-right {
+            color: #aaa;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+
+      .hero {
+        padding: 90px 7% 65px;
+
+         background:
+          linear-gradient(rgba(11, 11, 15, 0.35), rgba(11, 11, 15, 0.75)),
+           url("img/background.jpg");
+
+           background-size: cover;
+            background-position: center;
+           background-repeat: no-repeat;
+
+         text-align: center;
+}
+
+        .eyebrow {
+            color: #ff4554;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 85px);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: #ff303f;
+        }
+
+        .hero p {
+            color: #aaa4aa;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            width: 65px;
+            height: 4px;
+            background: #ff303f;
+            margin: 30px auto 0;
+            border-radius: 10px;
+        }
+
+        .library {
+            max-width: 1450px;
+            margin: auto;
+            padding: 10px 5% 100px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        .game-count {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: #151519;
+            border: 1px solid #30252a;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .game-card:hover {
+            border-color: #ff303e;
+            box-shadow: 0 12px 35px #ff303f20;
+        }
+
+        .image-container {
+            height: 230px;
+            overflow: hidden;
+            background: #250d12;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .card-content {
+            padding: 23px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-content h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .card-content p {
+            color: #99939a;
+            font-size: 13px;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 23px;
+        }
+
+        .game-card:hover .play-button {
+            background: #ff303f;
+            color: white;
+        }
+
+        .arrow {
+            font-size: 18px;
+        }
+
+        footer {
+            border-top: 1px solid #292025;
+            padding: 25px;
+            text-align: center;
+            color: #68636a;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <nav>
+        <div class="logo">Billys <span>Games</span></div>
+    </nav>
+
+    <header class="hero">
+        <div class="eyebrow">Made By Floppa9.</div>
+
+        <h1>Billy's <span>Games</span></h1>
+
+        <p>
+           <p id="randomText"></p> <br>
+        </p>
+
+        <div class="divider"></div>
+    </header>
+
+    <main class="library">
+
+        <div class="section-heading">
+            <h2>Games</h2>
+            <div class="game-count">03 GAMES</div>
+        </div>
+
+        <div class="games">
+
+            <!-- GAME 1 -->
+
+            <a class="game-card"
+               href="games/Funkin-HTML-Port-main/index.html">
+
+                <div class="image-container">
+                    <img src="img/fnf.jpg" alt="Friday Night Funkin'">
+                </div>
+
+                <div class="card-content">
+                    <h3>Friday Night Funkin'</h3>
+
+                    <p>
+                        Hit arrows to the song. come on you know this.
+                    </p>
+                </div>
+
+            </a>
+
+            <!-- GAME 2 -->
+
+            <a class="game-card" href="games/scary.html">
+
+                <div class="image-container">
+                    <img src="img/fnf1.png" alt="Scary game">
+                    <span class="genre">HORROR</span>
+                </div>
+
+                <div class="card-content">
+                    <h3>Scary</h3>
+
+                    <p>
+                        GAY
+                    </p>
+                </div>
+
+            </a>
+
+            <!-- GAME 3 -->
+
+            <a class="game-card" href="games/game3.html">
+
+                <div class="image-container">
+                    <img src="img/fnf1.png" alt="Game 3">
+                    <span class="genre">ACTION</span>
+                </div>
+
+                <div class="card-content">
+                    <h3>Game 03</h3>
+
+                    <p>
+                        GAY
+                    </p>
+                </div>
+
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+       Billys Games 2026
+    </footer>
+  <script>
+    let messages = [
+        "you like my games?",
+        "This took too long.",
+        "You want my games? You can have them! I left all the games I gathered together in one place! Now you just have to find it!",
+        "Why tf you looking at this?",
+        "GOON."
+    ];
+
+    let randomVar = Math.floor(Math.random() * messages.length);
+
+    document.getElementById("randomText").textContent = messages[randomVar];
+</script>
+
+</body>
 </html>
