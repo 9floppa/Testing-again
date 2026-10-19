@@ -1,0 +1,20 @@
+
+<script>
+(function () {
+    document.documentElement.style.visibility = "hidden";
+
+    if (sessionStorage.getItem("billyAccessGranted") === "yes") {
+        document.documentElement.style.visibility = "visible";
+        return;
+    }
+
+    const gamesIndex = location.pathname.indexOf("/games/");
+
+    if (gamesIndex !== -1) {
+        const repoRoot = location.pathname.slice(0, gamesIndex);
+        location.replace(repoRoot + "/index.html");
+    } else {
+        location.replace("../../index.html");
+    }
+})();
+</script>
