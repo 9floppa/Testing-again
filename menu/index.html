@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background: #0b0b0f;
             color: #f5f0e8;
@@ -18,7 +19,73 @@
             min-height: 100vh;
         }
 
-        /* NAVIGATION */
+        #loginScreen {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #107c66;
+          color: #f5f0e8;
+          font-family: Arial, sans-serif;
+        }
+
+        .lock-panel {
+            width: 90%;
+            max-width: 380px;
+            padding: 35px 25px;
+            text-align: center;
+            background: #101014;
+            border: 1px solid #292025;
+            border-top: 3px solid #18bc9c;
+            border-radius: 8px;
+        }
+
+        .lock-panel h2 {
+            margin: 0 0 25px;
+            font-size: 24px;
+        }
+
+        .lock-input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            background: #0b0b0f;
+            color: #f5f0e8;
+            border: 1px solid #393039;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .lock-input:focus {
+            outline: none;
+            border-color: #18bc9c;
+        }
+
+        #unlockButton {
+            width: 100%;
+            padding: 13px;
+            background: #18bc9c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #unlockButton:hover {
+            background: #1ddbb5;
+        }
+
+        #errorMessage {
+            min-height: 18px;
+            margin-bottom: 0;
+            color: #18bc9c;
+            font-size: 14px;
+        }
 
         nav {
             height: 75px;
@@ -40,26 +107,16 @@
             color: #ff303f;
         }
 
-        .nav-right {
-            color: #aaa;
-            font-size: 13px;
-            letter-spacing: 2px;
-        }
-
-
-      .hero {
-        padding: 90px 7% 65px;
-
-         background:
-          linear-gradient(rgba(11, 11, 15, 0.35), rgba(11, 11, 15, 0.75)),
-           url("img/background.jpg");
-
-           background-size: cover;
+        .hero {
+            padding: 90px 7% 65px;
+            background:
+                linear-gradient(rgba(11,11,15,.35), rgba(11,11,15,.75)),
+                url("img/background.jpg");
+            background-size: cover;
             background-position: center;
-           background-repeat: no-repeat;
-
-         text-align: center;
-}
+            background-repeat: no-repeat;
+            text-align: center;
+        }
 
         .eyebrow {
             color: #ff4554;
@@ -136,9 +193,9 @@
             flex-direction: column;
             min-width: 0;
             transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease;
+                transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
         }
 
         .game-card:hover {
@@ -158,7 +215,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.4s ease;
+            transition: transform .4s ease;
         }
 
         .game-card:hover img {
@@ -186,15 +243,6 @@
             margin-bottom: 23px;
         }
 
-        .game-card:hover .play-button {
-            background: #ff303f;
-            color: white;
-        }
-
-        .arrow {
-            font-size: 18px;
-        }
-
         footer {
             border-top: 1px solid #292025;
             padding: 25px;
@@ -203,113 +251,187 @@
             font-size: 12px;
             letter-spacing: 1px;
         }
+
+        @media (max-width: 800px) {
+            .games {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .games {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+        }
     </style>
 </head>
 
-
 <body>
+  <div>
+    <div id="loginScreen">
+        <div class="lock-panel">
+            <h2>Enter Code For Billy!</h2>
 
-    <nav>
-        <div class="logo">Billys <span>Games</span></div>
-    </nav>
+            <form id="loginForm">
+                <input
+                    type="password"
+                    id="codeInput"
+                    class="lock-input"
+                    placeholder="Enter Code"
+                    autocomplete="current-password"
+                    required
+                >
 
-    <header class="hero">
-        <div class="eyebrow">Made By Floppa9.</div>
+                <button type="submit" id="unlockButton">
+                    Unlock
+                </button>
 
-        <h1>Billy's <span>Games</span></h1>
-
-        <p>
-           <p id="randomText"></p> <br>
-        </p>
-
-        <div class="divider"></div>
-    </header>
-
-    <main class="library">
-
-        <div class="section-heading">
-            <h2>Games</h2>
-            <div class="game-count">03 GAMES</div>
+                <p id="errorMessage" role="status"></p>
+            </form>
         </div>
+    </div>
 
-        <div class="games">
+    <div id="website">
 
-            <!-- GAME 1 -->
+        <nav>
+            <div class="logo">Billys <span>Games</span></div>
+        </nav>
 
-            <a class="game-card"
-               href="games/Funkin-HTML-Port-main/index.html">
+        <header class="hero">
+            <div class="eyebrow">Made By Floppa9.</div>
 
-                <div class="image-container">
-                    <img src="img/fnf.jpg" alt="Friday Night Funkin'">
-                </div>
+            <h1>Billy's <span>Games</span></h1>
 
-                <div class="card-content">
-                    <h3>Friday Night Funkin'</h3>
+            <p id="randomText"></p>
 
-                    <p>
-                        Hit arrows to the song. come on you know this.
-                    </p>
-                </div>
+            <div class="divider"></div>
+        </header>
 
-            </a>
+        <main class="library">
 
-            <!-- GAME 2 -->
+            <div class="section-heading">
+                <h2>Games</h2>
+                <div class="game-count">03 GAMES</div>
+            </div>
 
-            <a class="game-card" href="games/scary.html">
+            <div class="games">
 
-                <div class="image-container">
-                    <img src="img/fnf1.png" alt="Scary game">
-                    <span class="genre">HORROR</span>
-                </div>
+                <!-- GAME 1 -->
 
-                <div class="card-content">
-                    <h3>Scary</h3>
+                <a class="game-card"
+                   href="games/Funkin-HTML-Port-main/index.html">
 
-                    <p>
-                        GAY
-                    </p>
-                </div>
+                    <div class="image-container">
+                        <img src="img/fnf.jpg" alt="Friday Night Funkin'">
+                    </div>
 
-            </a>
+                    <div class="card-content">
+                        <h3>Friday Night Funkin'</h3>
+                        <p>Hit arrows to the song. come on you know this.</p>
+                    </div>
+                </a>
 
-            <!-- GAME 3 -->
+                <!-- GAME 2 -->
 
-            <a class="game-card" href="games/game3.html">
+                <a class="game-card" href="games/scary.html">
 
-                <div class="image-container">
-                    <img src="img/fnf1.png" alt="Game 3">
-                    <span class="genre">ACTION</span>
-                </div>
+                    <div class="image-container">
+                        <img src="img/fnf1.png" alt="Scary game">
+                    </div>
 
-                <div class="card-content">
-                    <h3>Game 03</h3>
+                    <div class="card-content">
+                        <h3>Scary</h3>
+                        <p>GAY</p>
+                    </div>
+                </a>
 
-                    <p>
-                        GAY
-                    </p>
-                </div>
+                <!-- GAME 3 -->
 
-            </a>
+                <a class="game-card" href="games/game3.html">
 
-        </div>
-    </main>
+                    <div class="image-container">
+                        <img src="img/fnf1.png" alt="Game 3">
+                    </div>
 
-    <footer>
-       Billys Games 2026
-    </footer>
-  <script>
-    let messages = [
-        "you like my games?",
-        "This took too long.",
-        "You want my games? You can have them! I left all the games I gathered together in one place! Now you just have to find it!",
-        "Why tf you looking at this?",
-        "GOON."
-    ];
+                    <div class="card-content">
+                        <h3>Game 03</h3>
+                        <p>GAY</p>
+                    </div>
+                </a>
 
-    let randomVar = Math.floor(Math.random() * messages.length);
+            </div>
+        </main>
 
-    document.getElementById("randomText").textContent = messages[randomVar];
-</script>
+        <footer>
+            Billys Games 2026
+        </footer>
+
+    </div>
+
+    <script>
+        // CHANGE THIS TO YOUR OWN ACCESS CODE
+        const ACCESS_CODE = "billy123";
+
+        const loginForm = document.getElementById("loginForm");
+        const codeInput = document.getElementById("codeInput");
+        const errorMessage = document.getElementById("errorMessage");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (codeInput.value === ACCESS_CODE) {
+                document.getElementById("loginScreen").style.display = "none";
+                document.getElementById("website").style.display = "block";
+
+                showRandomText();
+            } else {
+                errorMessage.textContent = "Incorrect code. Try again.";
+                codeInput.value = "";
+                codeInput.focus();
+            }
+        });
+
+        function showRandomText() {
+            const messages = [
+                "you like my games?",
+                "This took too long.",
+                "You want my games? You can have them! I left all the games I gathered together in one place! Now you just have to find it!",
+                "Why tf you looking at this?",
+                "GOON."
+            ];
+
+            const randomVar = Math.floor(Math.random() * messages.length);
+
+            document.getElementById("randomText").textContent =
+                messages[randomVar];
+        }
+    </script>
+    
+    <script>
+        const correctCode = "nolearn";
+
+        document.getElementById("unlockButton").addEventListener("click", function () {
+            const enteredCode = document.querySelector(".lock-input").value;
+            const errorMessage = document.getElementById("errorMessage");
+            const loginScreen = document.getElementById("loginScreen");
+
+            if (enteredCode === correctCode) {
+                loginScreen.style.display = "none";
+            } else {
+                errorMessage.textContent = "Incorrect code! Try again.";
+            }
+        });
+
+        document.querySelector(".lock-input").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                document.getElementById("unlockButton").click();
+            }
+        });
+    </script>
 
 </body>
 </html>
