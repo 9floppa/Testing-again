@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+	(function () {
+	    document.documentElement.style.visibility = "hidden";
 	
+	    if (sessionStorage.getItem("billyAccessGranted") === "yes") {
+	        document.documentElement.style.visibility = "visible";
+	        return;
+	    }
+	
+	    const gamesIndex = location.pathname.indexOf("/games/");
+	
+	    if (gamesIndex !== -1) {
+	        const repoRoot = location.pathname.slice(0, gamesIndex);
+	        location.replace(repoRoot + "/index.html");
+	    } else {
+	        location.replace("../../index.html");
+	    }
+	})();
+	</script>
 	<meta charset="utf-8">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
