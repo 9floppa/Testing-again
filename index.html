@@ -14,15 +14,239 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet">
-  <style>
-    #selenite-portal .portal-panel { background: rgba(0,0,0,.12); border: 2px solid rgba(255,255,255,.35); border-radius: 8px; padding: 24px; }
-    #selenite-portal .portal-input { color: #2c3e50; max-width: 420px; margin: 0 auto 15px; }
-    #selenite-app { display: none; background: #2c3e50; border-radius: 8px; overflow: hidden; }
-    #selenite-frame { display: block; width: 100%; height: 75vh; min-height: 420px; border: 0; background: #111; }
-    .portal-toolbar { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; color: white; }
-    .portal-note { font-size: 13px; }
-    .portfolio-modal .modal-body img { max-height: 55vh; }
-  </style>
+  
+<style>
+  /* White and blue theme, preserving the original Freelancer design */
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --navy: #16345c;
+    --white: #ffffff;
+    --light-blue: #eff6ff;
+    --text: #334155;
+  }
+
+  body,
+  #portfolio,
+  .portfolio-modal .modal-content {
+    background-color: var(--white) !important;
+    color: var(--text) !important;
+  }
+
+  /* Navigation */
+  #mainNav.navbar-custom {
+    background-color: var(--white) !important;
+    border-color: #dbeafe !important;
+  }
+
+  #mainNav.navbar-custom .navbar-brand,
+  #mainNav.navbar-custom .navbar-nav li a {
+    color: var(--navy) !important;
+  }
+
+  #mainNav.navbar-custom .navbar-brand:hover,
+  #mainNav.navbar-custom .navbar-nav li a:hover,
+  #mainNav.navbar-custom .navbar-nav li.active a {
+    color: var(--blue) !important;
+    background: transparent !important;
+  }
+
+  #mainNav .navbar-toggle {
+    color: var(--navy) !important;
+    background: var(--light-blue) !important;
+    border-color: #bfdbfe !important;
+  }
+
+  #mainNav .navbar-collapse {
+    border-color: #dbeafe !important;
+  }
+
+  /* Header: retain the original layout and background image */
+  body.index header {
+    color: var(--navy) !important;
+    background-color: var(--light-blue) !important;
+    background-image: none !important;
+  }
+
+  body.index header .name {
+    color: var(--navy) !important;
+  }
+
+  body.index header .skills {
+    color: var(--text) !important;
+  }
+
+  /* Headings and dividers */
+  section h2,
+  .portfolio-modal .modal-body h2 {
+    color: var(--navy) !important;
+  }
+
+  hr.star-primary {
+    border-color: var(--blue) !important;
+  }
+
+  hr.star-primary:after {
+    color: var(--blue) !important;
+    background-color: var(--white) !important;
+  }
+
+  hr.star-light {
+    border-color: #93c5fd !important;
+  }
+
+  hr.star-light:after {
+    color: var(--blue) !important;
+    background-color: var(--light-blue) !important;
+  }
+
+  /* About and access sections */
+  #about.success,
+  #selenite-portal.success {
+    background-color: var(--light-blue) !important;
+    color: var(--text) !important;
+  }
+
+  #about h2,
+  #selenite-portal h2 {
+    color: var(--navy) !important;
+  }
+
+  #about p,
+  #selenite-portal p {
+    color: var(--text) !important;
+  }
+
+  /* Access-code panel: keep the original shape */
+  #selenite-portal .portal-panel {
+    background: var(--white) !important;
+    border: 2px solid #bfdbfe !important;
+    border-radius: 0;
+    padding: 24px;
+  }
+
+  #selenite-portal label {
+    color: var(--navy);
+  }
+
+  #selenite-portal .portal-input {
+    color: var(--navy) !important;
+    background: var(--white) !important;
+    border-color: #93c5fd !important;
+    box-shadow: none !important;
+  }
+
+  #selenite-portal .portal-input:focus {
+    border-color: var(--blue) !important;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.25) !important;
+  }
+
+  #selenite-error {
+    color: #dc2626 !important;
+  }
+
+  /* Round buttons only */
+  .btn,
+  #selenite-portal .btn,
+  .portfolio-modal .btn {
+    border-radius: 8px !important;
+  }
+
+  .btn-primary,
+  #selenite-portal .btn-outline,
+  .portfolio-modal .btn-default {
+    color: var(--white) !important;
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+  }
+
+  .btn-primary:hover,
+  #selenite-portal .btn-outline:hover,
+  .portfolio-modal .btn-default:hover {
+    color: var(--white) !important;
+    background-color: var(--blue-dark) !important;
+    border-color: var(--blue-dark) !important;
+  }
+
+  #selenite-portal .btn-default {
+    color: var(--navy) !important;
+    background-color: var(--white) !important;
+    border-color: #bfdbfe !important;
+  }
+
+  #selenite-portal .btn-default:hover {
+    background-color: #dbeafe !important;
+  }
+
+  /* Embedded portal */
+  #selenite-app {
+    background: var(--white) !important;
+    border-radius: 0;
+  }
+
+  .portal-toolbar {
+    color: var(--navy) !important;
+    background: #dbeafe !important;
+    border-bottom: 1px solid #bfdbfe;
+  }
+
+  #selenite-frame {
+    background: var(--white);
+  }
+
+  #selenite-portal a {
+    color: var(--blue);
+  }
+
+  #selenite-portal a:hover {
+    color: var(--blue-dark);
+  }
+
+  /* Portfolio hover overlay */
+  #portfolio .portfolio-link .caption {
+    background: rgba(37, 99, 235, 0.85) !important;
+  }
+
+  /* Modal close button and accents */
+  .portfolio-modal .close-modal {
+    background-color: var(--white) !important;
+  }
+
+  .portfolio-modal .close-modal:hover {
+    background-color: var(--light-blue) !important;
+  }
+
+  .portfolio-modal .close-modal .lr,
+  .portfolio-modal .close-modal .rl {
+    background-color: var(--blue) !important;
+  }
+
+  .portfolio-modal .modal-body p {
+    color: var(--text) !important;
+  }
+
+  /* Footer */
+  footer,
+  footer .footer-below {
+    color: var(--text) !important;
+    background-color: var(--white) !important;
+  }
+
+  footer .footer-below {
+    border-top: 1px solid #dbeafe;
+  }
+
+  /* Original mobile navigation, with matching colors */
+  @media (max-width: 767px) {
+    #mainNav .navbar-collapse {
+      background-color: var(--white) !important;
+    }
+
+    #mainNav.navbar-custom .navbar-nav li a {
+      color: var(--navy) !important;
+    }
+  }
+</style>
 </head>
 <body id="page-top" class="index">
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
