@@ -15,13 +15,427 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet">
   <style>
-    #selenite-portal .portal-panel { background: rgba(0,0,0,.12); border: 2px solid rgba(255,255,255,.35); border-radius: 8px; padding: 24px; }
-    #selenite-portal .portal-input { color: #2c3e50; max-width: 420px; margin: 0 auto 15px; }
-    #selenite-app { display: none; background: #2c3e50; border-radius: 8px; overflow: hidden; }
-    #selenite-frame { display: block; width: 100%; height: 75vh; min-height: 420px; border: 0; background: #111; }
-    .portal-toolbar { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; color: white; }
-    .portal-note { font-size: 13px; }
-    .portfolio-modal .modal-body img { max-height: 55vh; }
+
+<style>
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --navy: #16345c;
+    --text: #334155;
+    --muted: #64748b;
+    --white: #ffffff;
+    --light-blue: #eff6ff;
+    --border: #dbeafe;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+  }
+
+  body {
+    background: var(--white) !important;
+    color: var(--text) !important;
+    font-family: "Lato", sans-serif;
+  }
+
+  /* Navigation */
+  #mainNav.navbar-custom {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 3px 18px rgba(37, 99, 235, 0.07);
+    backdrop-filter: blur(12px);
+  }
+
+  #mainNav .navbar-brand,
+  #mainNav .navbar-nav > li > a {
+    color: var(--navy) !important;
+    transition: color 0.2s ease;
+  }
+
+  #mainNav .navbar-brand {
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  #mainNav .navbar-nav > li > a {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  #mainNav .navbar-nav > li > a:hover,
+  #mainNav .navbar-nav > .active > a {
+    color: var(--blue) !important;
+    background: transparent !important;
+  }
+
+  #mainNav .navbar-toggle {
+    color: var(--navy) !important;
+    border-color: var(--border) !important;
+    background: var(--light-blue) !important;
+  }
+
+  #mainNav .navbar-toggle:hover {
+    background: #dbeafe !important;
+  }
+
+  /* Hero section */
+  body.index header {
+    background: linear-gradient(
+      135deg,
+      #eff6ff 0%,
+      #ffffff 55%,
+      #dbeafe 100%
+    ) !important;
+    color: var(--navy) !important;
+    padding: 150px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body.index header img {
+    max-width: 210px;
+    max-height: 210px;
+    object-fit: contain;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 35px rgba(37, 99, 235, 0.13);
+  }
+
+  body.index header .name {
+    color: var(--navy) !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  body.index header .skills {
+    color: var(--muted) !important;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  /* Section headings */
+  section {
+    padding: 85px 0;
+  }
+
+  section h2 {
+    color: var(--navy) !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  hr.star-primary {
+    border-color: var(--blue) !important;
+  }
+
+  hr.star-primary:after {
+    color: var(--blue) !important;
+    background: var(--white) !important;
+  }
+
+  hr.star-light {
+    border-color: #93c5fd !important;
+  }
+
+  hr.star-light:after {
+    color: var(--blue) !important;
+    background: transparent !important;
+  }
+
+  /* Features */
+  #portfolio {
+    background: white !important;
+  }
+
+  #portfolio .portfolio-item {
+    margin-bottom: 30px;
+  }
+
+  #portfolio .portfolio-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--light-blue);
+    box-shadow: 0 5px 20px rgba(30, 64, 175, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  #portfolio .portfolio-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.16);
+  }
+
+  #portfolio .portfolio-link img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  #portfolio .portfolio-link .caption {
+    background: rgba(37, 99, 235, 0.86) !important;
+    border-radius: 14px;
+  }
+
+  #portfolio .portfolio-link .caption-content {
+    color: white !important;
+  }
+
+  /* About section */
+  #about.success {
+    background: var(--light-blue) !important;
+    color: var(--text) !important;
+  }
+
+  #about h2 {
+    color: var(--navy) !important;
+  }
+
+  #about hr.star-light {
+    border-color: #93c5fd !important;
+  }
+
+  #about p {
+    color: var(--text) !important;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  /* Access portal */
+  #selenite-portal.success {
+    background: linear-gradient(
+      145deg,
+      #ffffff,
+      #eff6ff
+    ) !important;
+    color: var(--text) !important;
+  }
+
+  #selenite-portal h2 {
+    color: var(--navy) !important;
+  }
+
+  #selenite-portal p {
+    color: var(--muted);
+  }
+
+  #selenite-portal .portal-panel {
+    background: white !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 18px;
+    padding: 35px 28px;
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.09);
+    transition: box-shadow 0.25s ease;
+  }
+
+  #selenite-portal .portal-panel:hover {
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.14);
+  }
+
+  #selenite-portal label {
+    display: block;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  #selenite-portal .portal-input {
+    max-width: 420px;
+    height: 48px;
+    margin: 0 auto 18px;
+    color: var(--navy) !important;
+    background: #f8fbff !important;
+    border: 1px solid #cbdcf5 !important;
+    border-radius: 9px;
+    box-shadow: none !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  #selenite-portal .portal-input:focus {
+    border-color: var(--blue) !important;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
+  }
+
+  #selenite-portal .portal-input::placeholder {
+    color: #94a3b8;
+  }
+
+  /* Buttons */
+  .btn,
+  #selenite-portal .btn-outline {
+    border-radius: 9px !important;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+
+  #selenite-portal .btn-outline,
+  .btn-primary {
+    color: white !important;
+    background: var(--blue) !important;
+    border: 1px solid var(--blue) !important;
+  }
+
+  #selenite-portal .btn-outline:hover,
+  .btn-primary:hover {
+    color: white !important;
+    background: var(--blue-dark) !important;
+    border-color: var(--blue-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
+  }
+
+  #selenite-portal .btn-default {
+    color: var(--navy) !important;
+    background: white !important;
+    border: 1px solid var(--border) !important;
+  }
+
+  #selenite-portal .btn-default:hover {
+    background: var(--light-blue) !important;
+  }
+
+  #selenite-error {
+    color: #dc2626 !important;
+  }
+
+  /* Embedded application */
+  #selenite-app {
+    display: none;
+    background: white !important;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.1);
+  }
+
+  .portal-toolbar {
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: var(--navy) !important;
+    background: #eff6ff !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #selenite-frame {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    min-height: 420px;
+    border: 0;
+    background: white;
+  }
+
+  .portal-note {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  #selenite-portal a {
+    color: var(--blue);
+    font-weight: 700;
+  }
+
+  #selenite-portal a:hover {
+    color: var(--blue-dark);
+  }
+
+  /* Feature popups */
+  .portfolio-modal .modal-content {
+    background: white !important;
+    color: var(--text) !important;
+  }
+
+  .portfolio-modal .modal-body h2 {
+    color: var(--navy) !important;
+  }
+
+  .portfolio-modal .modal-body p {
+    color: var(--text) !important;
+    line-height: 1.8;
+  }
+
+  .portfolio-modal .close-modal {
+    background: white !important;
+  }
+
+  .portfolio-modal .close-modal:hover {
+    background: var(--light-blue) !important;
+  }
+
+  .portfolio-modal .close-modal .lr,
+  .portfolio-modal .close-modal .rl {
+    background-color: var(--blue) !important;
+  }
+
+  .portfolio-modal .btn-default {
+    color: white !important;
+    background: var(--blue) !important;
+    border-color: var(--blue) !important;
+  }
+
+  /* Footer */
+  footer {
+    color: var(--text) !important;
+    background: white !important;
+  }
+
+  footer .footer-below {
+    padding: 25px 0;
+    color: var(--muted) !important;
+    background: #eff6ff !important;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Smooth, responsive layout */
+  @media (max-width: 767px) {
+    body.index header {
+      padding: 115px 0 75px;
+    }
+
+    body.index header .name {
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    body.index header .skills {
+      font-size: 16px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    #selenite-portal .portal-panel {
+      padding: 25px 18px;
+    }
+
+    #mainNav .navbar-collapse {
+      background: white;
+      border-color: var(--border);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
+</style>
   </style>
 </head>
 <body id="page-top" class="index">
