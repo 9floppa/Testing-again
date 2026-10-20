@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Billy's math-help and learning portal">
   <meta name="author" content="Billy">
-  <title>Amadite Math!</title>
+  <title>Math Assistant - Billy!</title>
 
   <!-- Keep these paths: the repository already stores these folders beside index.html. -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -15,427 +15,13 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" rel="stylesheet">
   <style>
-
-<style>
-  :root {
-    --blue: #2563eb;
-    --blue-dark: #1d4ed8;
-    --navy: #16345c;
-    --text: #334155;
-    --muted: #64748b;
-    --white: #ffffff;
-    --light-blue: #eff6ff;
-    --border: #dbeafe;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 75px;
-  }
-
-  body {
-    background: var(--white) !important;
-    color: var(--text) !important;
-    font-family: "Lato", sans-serif;
-  }
-
-  /* Navigation */
-  #mainNav.navbar-custom {
-    background: rgba(255, 255, 255, 0.97) !important;
-    border: none !important;
-    border-bottom: 1px solid var(--border) !important;
-    box-shadow: 0 3px 18px rgba(37, 99, 235, 0.07);
-    backdrop-filter: blur(12px);
-  }
-
-  #mainNav .navbar-brand,
-  #mainNav .navbar-nav > li > a {
-    color: var(--navy) !important;
-    transition: color 0.2s ease;
-  }
-
-  #mainNav .navbar-brand {
-    font-weight: 800;
-    letter-spacing: 1px;
-  }
-
-  #mainNav .navbar-nav > li > a {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  #mainNav .navbar-nav > li > a:hover,
-  #mainNav .navbar-nav > .active > a {
-    color: var(--blue) !important;
-    background: transparent !important;
-  }
-
-  #mainNav .navbar-toggle {
-    color: var(--navy) !important;
-    border-color: var(--border) !important;
-    background: var(--light-blue) !important;
-  }
-
-  #mainNav .navbar-toggle:hover {
-    background: #dbeafe !important;
-  }
-
-  /* Hero section */
-  body.index header {
-    background: linear-gradient(
-      135deg,
-      #eff6ff 0%,
-      #ffffff 55%,
-      #dbeafe 100%
-    ) !important;
-    color: var(--navy) !important;
-    padding: 150px 0 110px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  body.index header img {
-    max-width: 210px;
-    max-height: 210px;
-    object-fit: contain;
-    margin: 0 auto 30px;
-    border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 10px 35px rgba(37, 99, 235, 0.13);
-  }
-
-  body.index header .name {
-    color: var(--navy) !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    letter-spacing: 3px;
-  }
-
-  body.index header .skills {
-    color: var(--muted) !important;
-    font-size: 18px;
-    line-height: 1.9;
-  }
-
-  /* Section headings */
-  section {
-    padding: 85px 0;
-  }
-
-  section h2 {
-    color: var(--navy) !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  hr.star-primary {
-    border-color: var(--blue) !important;
-  }
-
-  hr.star-primary:after {
-    color: var(--blue) !important;
-    background: var(--white) !important;
-  }
-
-  hr.star-light {
-    border-color: #93c5fd !important;
-  }
-
-  hr.star-light:after {
-    color: var(--blue) !important;
-    background: transparent !important;
-  }
-
-  /* Features */
-  #portfolio {
-    background: white !important;
-  }
-
-  #portfolio .portfolio-item {
-    margin-bottom: 30px;
-  }
-
-  #portfolio .portfolio-link {
-    display: block;
-    overflow: hidden;
-    border-radius: 14px;
-    background: var(--light-blue);
-    box-shadow: 0 5px 20px rgba(30, 64, 175, 0.07);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  #portfolio .portfolio-link:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.16);
-  }
-
-  #portfolio .portfolio-link img {
-    width: 100%;
-    border-radius: 14px;
-  }
-
-  #portfolio .portfolio-link .caption {
-    background: rgba(37, 99, 235, 0.86) !important;
-    border-radius: 14px;
-  }
-
-  #portfolio .portfolio-link .caption-content {
-    color: white !important;
-  }
-
-  /* About section */
-  #about.success {
-    background: var(--light-blue) !important;
-    color: var(--text) !important;
-  }
-
-  #about h2 {
-    color: var(--navy) !important;
-  }
-
-  #about hr.star-light {
-    border-color: #93c5fd !important;
-  }
-
-  #about p {
-    color: var(--text) !important;
-    font-size: 17px;
-    line-height: 1.9;
-  }
-
-  /* Access portal */
-  #selenite-portal.success {
-    background: linear-gradient(
-      145deg,
-      #ffffff,
-      #eff6ff
-    ) !important;
-    color: var(--text) !important;
-  }
-
-  #selenite-portal h2 {
-    color: var(--navy) !important;
-  }
-
-  #selenite-portal p {
-    color: var(--muted);
-  }
-
-  #selenite-portal .portal-panel {
-    background: white !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 18px;
-    padding: 35px 28px;
-    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.09);
-    transition: box-shadow 0.25s ease;
-  }
-
-  #selenite-portal .portal-panel:hover {
-    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.14);
-  }
-
-  #selenite-portal label {
-    display: block;
-    color: var(--navy);
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-
-  #selenite-portal .portal-input {
-    max-width: 420px;
-    height: 48px;
-    margin: 0 auto 18px;
-    color: var(--navy) !important;
-    background: #f8fbff !important;
-    border: 1px solid #cbdcf5 !important;
-    border-radius: 9px;
-    box-shadow: none !important;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  #selenite-portal .portal-input:focus {
-    border-color: var(--blue) !important;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
-  }
-
-  #selenite-portal .portal-input::placeholder {
-    color: #94a3b8;
-  }
-
-  /* Buttons */
-  .btn,
-  #selenite-portal .btn-outline {
-    border-radius: 9px !important;
-    font-weight: 700;
-    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-  }
-
-  #selenite-portal .btn-outline,
-  .btn-primary {
-    color: white !important;
-    background: var(--blue) !important;
-    border: 1px solid var(--blue) !important;
-  }
-
-  #selenite-portal .btn-outline:hover,
-  .btn-primary:hover {
-    color: white !important;
-    background: var(--blue-dark) !important;
-    border-color: var(--blue-dark) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
-  }
-
-  #selenite-portal .btn-default {
-    color: var(--navy) !important;
-    background: white !important;
-    border: 1px solid var(--border) !important;
-  }
-
-  #selenite-portal .btn-default:hover {
-    background: var(--light-blue) !important;
-  }
-
-  #selenite-error {
-    color: #dc2626 !important;
-  }
-
-  /* Embedded application */
-  #selenite-app {
-    display: none;
-    background: white !important;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.1);
-  }
-
-  .portal-toolbar {
-    padding: 14px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    color: var(--navy) !important;
-    background: #eff6ff !important;
-    border-bottom: 1px solid var(--border);
-  }
-
-  #selenite-frame {
-    display: block;
-    width: 100%;
-    height: 75vh;
-    min-height: 420px;
-    border: 0;
-    background: white;
-  }
-
-  .portal-note {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  #selenite-portal a {
-    color: var(--blue);
-    font-weight: 700;
-  }
-
-  #selenite-portal a:hover {
-    color: var(--blue-dark);
-  }
-
-  /* Feature popups */
-  .portfolio-modal .modal-content {
-    background: white !important;
-    color: var(--text) !important;
-  }
-
-  .portfolio-modal .modal-body h2 {
-    color: var(--navy) !important;
-  }
-
-  .portfolio-modal .modal-body p {
-    color: var(--text) !important;
-    line-height: 1.8;
-  }
-
-  .portfolio-modal .close-modal {
-    background: white !important;
-  }
-
-  .portfolio-modal .close-modal:hover {
-    background: var(--light-blue) !important;
-  }
-
-  .portfolio-modal .close-modal .lr,
-  .portfolio-modal .close-modal .rl {
-    background-color: var(--blue) !important;
-  }
-
-  .portfolio-modal .btn-default {
-    color: white !important;
-    background: var(--blue) !important;
-    border-color: var(--blue) !important;
-  }
-
-  /* Footer */
-  footer {
-    color: var(--text) !important;
-    background: white !important;
-  }
-
-  footer .footer-below {
-    padding: 25px 0;
-    color: var(--muted) !important;
-    background: #eff6ff !important;
-    border-top: 1px solid var(--border);
-  }
-
-  /* Smooth, responsive layout */
-  @media (max-width: 767px) {
-    body.index header {
-      padding: 115px 0 75px;
-    }
-
-    body.index header .name {
-      font-size: 30px;
-      letter-spacing: 2px;
-    }
-
-    body.index header .skills {
-      font-size: 16px;
-    }
-
-    section {
-      padding: 60px 0;
-    }
-
-    #selenite-portal .portal-panel {
-      padding: 25px 18px;
-    }
-
-    #mainNav .navbar-collapse {
-      background: white;
-      border-color: var(--border);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      scroll-behavior: auto !important;
-      transition: none !important;
-    }
-  }
-</style>
+    #selenite-portal .portal-panel { background: rgba(0,0,0,.12); border: 2px solid rgba(255,255,255,.35); border-radius: 8px; padding: 24px; }
+    #selenite-portal .portal-input { color: #2c3e50; max-width: 420px; margin: 0 auto 15px; }
+    #selenite-app { display: none; background: #2c3e50; border-radius: 8px; overflow: hidden; }
+    #selenite-frame { display: block; width: 100%; height: 75vh; min-height: 420px; border: 0; background: #111; }
+    .portal-toolbar { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; color: white; }
+    .portal-note { font-size: 13px; }
+    .portfolio-modal .modal-body img { max-height: 55vh; }
   </style>
 </head>
 <body id="page-top" class="index">
@@ -445,14 +31,14 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="#page-top">Amadite</a>
+        <a class="navbar-brand" href="#page-top">Billy</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden"><a href="#page-top"></a></li>
-          <li class="page-scroll"><a href="#portfolio">Amadite Features</a></li>
-          <li class="page-scroll"><a href="#about">About Amadite</a></li>
-          <li class="page-scroll"><a href="#selenite-portal">Access Amadite Now</a></li>
+          <li class="page-scroll"><a href="#portfolio">My Features!</a></li>
+          <li class="page-scroll"><a href="#about">About Billy!</a></li>
+          <li class="page-scroll"><a href="#selenite-portal">Access Me Now!</a></li>
         </ul>
       </div>
     </div>
@@ -464,11 +50,11 @@
             <div class="col-lg-12">
                 <img class="img-responsive" src="img/profile.png" alt="Billy profile image">
                 <div class="intro-text">
-                    <span class="name">AMADITE MATH</span>
+                    <span class="name">Hey there! I am Billy!</span>
                     <hr class="star-light">
                     <span class="skills">
-                        Amadite Math helps children learn math without giving away the answers.<br>
-                        We also have plenty of math sheets for children, from grades JK to 8
+                        I help children learn math without simply giving away the answers!<br>
+                        I also have plenty of math sheets for children to learn!
                     </span>
                 </div>
             </div>
@@ -478,7 +64,7 @@
 
   <section id="portfolio">
     <div class="container">
-      <div class="row"><div class="col-lg-12 text-center"><h2>The Stuff We Do</h2><hr class="star-primary"></div></div>
+      <div class="row"><div class="col-lg-12 text-center"><h2>The Stuff I Do!</h2><hr class="star-primary"></div></div>
       <div class="row">
         <div class="col-sm-4 portfolio-item"><a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" aria-label="Open feature 1"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/cabin.png" class="img-responsive" alt="Feature 1"></a></div>
         <div class="col-sm-4 portfolio-item"><a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" aria-label="Open feature 2"><div class="caption"><div class="caption-content"><i class="fa fa-search-plus fa-3x"></i></div></div><img src="img/portfolio/cake.png" class="img-responsive" alt="Feature 2"></a></div>
@@ -494,7 +80,7 @@
     <div class="container">
       <div class="row"><div class="col-lg-12 text-center"><h2>About</h2><hr class="star-light"></div></div>
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-2"><p>We Would love to help you or your children learn. Explore the features above to get started.</p></div>
+        <div class="col-lg-4 col-lg-offset-2"><p>I'd love to help you or your children learn. Explore the features above to get started.</p></div>
         <div class="col-lg-4"><p>For questions, use the contact details supplied by the site owner.</p></div>
       </div>
     </div>
@@ -502,7 +88,7 @@
 
   <section id="selenite-portal" class="success">
     <div class="container">
-      <div class="row"><div class="col-lg-12 text-center"><h2>Get Access Now! (message for code!)</h2><hr class="star-light"><p>Enter your access code to open Amadite</p></div></div>
+      <div class="row"><div class="col-lg-12 text-center"><h2>Get Access Now! (message for code!)</h2><hr class="star-light"><p>Enter your access code to open Billy!</p></div></div>
       <div class="row"><div class="col-lg-8 col-lg-offset-2 text-center">
         <div id="selenite-login" class="portal-panel">
           <form id="selenite-login-form">
@@ -517,7 +103,7 @@
           <iframe id="selenite-frame" title="Selenite portal" allow="fullscreen; gamepad" allowfullscreen loading="lazy"></iframe>
         </div>
         <p class="portal-note" style="margin-top:14px">The portal is intended to open inside this page. If the site refuses to load in an embedded frame, use the open-site link below.</p>
-        <p><a href="https://selenite.cc/" target="_blank" rel="noopener noreferrer">Open Amadite in a new tab</a></p>
+        <p><a href="https://selenite.cc/" target="_blank" rel="noopener noreferrer">Open Billy in a new tab</a></p>
       </div></div>
     </div>
   </section>
@@ -525,9 +111,9 @@
   <footer class="text-center"><div class="footer-below"><div class="container"><div class="row"><div class="col-lg-12">Copyright &copy; Billy.co</div></div></div></div></footer>
 
   <!-- All six portfolio tiles now have a matching modal target. -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Math Learning</h2><hr class="star-primary"><img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt=""><p>Explore learning activities designed to help students practice.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Math Learning</h2><hr class="star-primary"><img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt=""><p>Explore learning activities designed to help students practise.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
   <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Practice Sheets</h2><hr class="star-primary"><img src="img/portfolio/cake.png" class="img-responsive img-centered" alt=""><p>Use practice sheets to build confidence with maths skills.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Visuals</h2><hr class="star-primary"><img src="img/portfolio/circus.png" class="img-responsive img-centered" alt=""><p>We have blocks, wheels and more, to help children visualize and interact with math.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Math AI</h2><hr class="star-primary"><img src="img/portfolio/circus.png" class="img-responsive img-centered" alt=""><p>Get hints and guidance to help you learn the method, rather than just copying an answer.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
   <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Learning Games</h2><hr class="star-primary"><img src="img/portfolio/game.png" class="img-responsive img-centered" alt=""><p>Practise skills with activities and games.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
   <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>Progress</h2><hr class="star-primary"><img src="img/portfolio/safe.png" class="img-responsive img-centered" alt=""><p>Keep practising and build your confidence one step at a time.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
   <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-content"><div class="close-modal" data-dismiss="modal" aria-label="Close"><div class="lr"><div class="rl"></div></div></div><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2"><div class="modal-body"><h2>More Resources</h2><hr class="star-primary"><img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt=""><p>Check back for more learning resources and activities.</p><button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></div></div></div></div></div></div>
@@ -575,4 +161,6 @@ form.addEventListener("submit", function (event) {
     }());
   </script>
 </body>
+</html>
+
 </html>
